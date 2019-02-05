@@ -1,0 +1,59 @@
+{
+  "name": "send-it",
+  "version": "0.0.0",
+  "private": true,
+  "main": "app.js",
+  "engines": {
+    "node": "10.5.0"
+  },
+  "scripts": {
+    "start": "node --require babel-core/register --require babel-polyfill ./server/app.js",
+    "test": "nyc --reporter=html --reporter=text mocha ./server/test --compilers js:babel-core/register --timeout 10000 --exit",
+    "devstart": "nodemon --require babel-core/register --require babel-polyfill ./server/app.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "compile": "babel ./server -d ./compiled"
+  },
+  "dependencies": {
+    "ajv": "^5.0.0",
+    "async": "^2.6.1",
+    "babel-core": "^6.25.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.16.1",
+    "cookie-parser": "^1.4.3",
+    "debug": "^3.0.0",
+    "express": "^4.15.4",
+    "jsonwebtoken": "^8.4.0",
+    "moment": "^2.22.2",
+    "morgan": "^1.8.2",
+    "pg": "^7.6.1",
+    "semver": "^5.6.0",
+    "serve-favicon": "^2.5.0",
+    "swagger-node-express": "^2.1.3",
+    "swagger-tools": "^0.10.4",
+    "swagger-ui-express": "^4.0.1",
+    "uuid": "^3.3.2",
+    "dotenv": "^6.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^7.2.3",
+    "chai": "^4.1.1",
+    "chai-http": "^4.2.0",
+    "coveralls": "^3.0.2",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-react": "^7.2.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nodemon": "^1.18.6",
+    "nyc": "^13.1.0"
+  }
+}
